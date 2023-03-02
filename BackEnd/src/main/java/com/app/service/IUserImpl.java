@@ -23,7 +23,13 @@ public class IUserImpl implements IUserService {
 
 	@Override
 	public User addUserDetails(User u) {
-		u.setRole(Role.DEVOTEE);
+		/*String s=String.format("%s",u.getRole()); 
+		if( s == "Devotee") {
+			u.setRole(Role.Devotee);
+		}
+		else {
+			u.setRole(Role.TempleAdmin);
+		}*/
 		return UserRepo.save(u);
 	}
 

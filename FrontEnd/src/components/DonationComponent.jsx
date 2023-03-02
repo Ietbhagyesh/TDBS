@@ -15,17 +15,6 @@ class DonationComponent extends Component {
                     cardOwner:'',  
                     donationAmount:'', 
                     donationType:'',
-                    
-               
-                   
-                 
-
-   
-                   
-                
-                
-                   
-                   
                    
                 }}
                 validationSchema={Yup.object().shape({
@@ -42,8 +31,6 @@ class DonationComponent extends Component {
                     expDate: Yup.string()
                        
                         .required('This field is required'),
-
-                   
 
                         cardOwner: Yup.string()
                       
@@ -78,15 +65,12 @@ class DonationComponent extends Component {
 
                           <div className="form-group">
                      <label htmlFor="donationType"> Donation Category</label>
-                                         
-                                            
                                             
                                             <Field   as="select" name = "donationType" className={'form-control'} >
                                                 <option value = "Donation for Developement purpose" selected>Donation for Developement purpose</option>
                                                 <option value = "Donation for Religious purpose">Donation for Religious purpose</option>
                                                 <option value = "Donation for Free Prasad Bhojan">Donation for Free Prasad Bhojan</option>
-                                               
-                                           
+                                            
                                           </Field>
                                                 </div> 
                         <div className="form-group" >
@@ -116,8 +100,6 @@ class DonationComponent extends Component {
                             <ErrorMessage name="donationAmount" component="div" className="invalid-feedback" />
                         </div>
 
-                                
-                      
                         <div className="form-group">
                         <button type="submit" className="btn btn-primary mr-2">Register</button>
                         </div>

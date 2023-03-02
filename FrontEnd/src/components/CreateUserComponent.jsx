@@ -10,13 +10,13 @@ class CreateUserComponent extends Component {
         return (
             <Formik
                 initialValues={{
-                    name: '',
-                  
-                    email: '',
-                    password: '',
-                    mobNo:'',
-                    adharNo:'',
-                    address:'',
+                    name : '',
+                    email : '',
+                    mobNo :'',
+                    adharNo :'',
+                    address :'',
+                    password : '',
+                    role : 'Devotee' ,
                    
                    
                 }}
@@ -41,6 +41,10 @@ class CreateUserComponent extends Component {
 
                         address: Yup.string()
                         .required('Address is required'),
+
+                        role: Yup.string()
+                        .required('Role is required'),
+                        
                     
                 })}
                 onSubmit={fields => {
@@ -90,6 +94,16 @@ class CreateUserComponent extends Component {
                             <Field name="address" type="text" className={'form-control' + (errors.address && touched.address ? ' is-invalid' : '')} />
                             <ErrorMessage name="address" component="div" className="invalid-feedback" />
                         </div>
+
+
+                        <div className="form-group">
+                            <label htmlFor="role">Role</label> 
+                            <Field   as="select" name = "role" className={'form-control'} >
+                                <option value = "Devotee" selected>Devotee</option>
+                                <option value = "TempleAdmin">Temple Admin</option>
+                            </Field>
+                        </div>
+
                         <div className="form-group">
                             <button type="submit" className="btn btn-primary mr-2">Register</button>
                             <button type="reset" className="btn btn-secondary">Reset</button>
